@@ -40,13 +40,13 @@ async def start(client: Client, message: Message):
             reply_to_message_id = message.id,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel", url = client.invitelink)]])
     try:
-    text = START_TXT.format(update.from_user.mention)
-    reply_markup = START_BTN
-    await message.reply_text(
-    text=text,
-    disable_web_page_preview=True,
-    reply_markup=reply_markup
-    )
+        text = START_TXT.format(update.from_user.mention)
+        reply_markup = START_BTN
+        await message.reply_text(
+        text=text,
+        disable_web_page_preview=True,
+        reply_markup=reply_markup
+        )
 
 
 # global variable to store path of the recent sended thumbnail
