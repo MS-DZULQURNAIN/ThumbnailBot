@@ -28,8 +28,8 @@ START_BTN = InlineKeyboardMarkup(
     )
 
 
-@Bot.on_message(filters.command(["start"]))
-async def start(bot, update):
+@Bot.on_message(filters.command("start") & filters.private)
+async def start(client: Client, message: Message):
     kontol = FSUB
     user_id = message.from_user.id
     if kontol:
@@ -38,10 +38,10 @@ async def start(bot, update):
         except UserNotParticipant:
             await message.reply_text("subscribe ch kami untuk mendapatkan akses bot",
             reply_to_message_id = message.id,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel", url="https://t.me/MSPR0JECT")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel", url = client.invitelink)]])
     text = START_TXT.format(update.from_user.mention)
     reply_markup = START_BTN
-    await update.reply_text(
+    await message.reply_text(
         text=text,
         disable_web_page_preview=True,
         reply_markup=reply_markup
