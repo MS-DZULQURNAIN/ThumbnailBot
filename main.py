@@ -36,7 +36,9 @@ async def start(bot, update):
         try:
             await bot.get_chat_member(kontol, user_id)
         except UserNotParticipant:
-            await message.reply_text("subscribe ch owner ya and"
+            await message.reply_text("subscribe ch kami untuk mendapatkan akses bot",
+            reply_to_message_id = message.id,
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel", url="https://t.me/MSPR0JECT")]])
     text = START_TXT.format(update.from_user.mention)
     reply_markup = START_BTN
     await update.reply_text(
