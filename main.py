@@ -39,6 +39,7 @@ async def start(client: Client, message: Message):
             await message.reply_text("subscribe ch kami untuk mendapatkan akses bot",
             reply_to_message_id = message.id,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel", url = client.invitelink)]])
+                                     return
     try:
         text = START_TXT.format(update.from_user.mention)
         reply_markup = START_BTN
