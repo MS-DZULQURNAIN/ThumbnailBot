@@ -30,6 +30,9 @@ START_BTN = InlineKeyboardMarkup(
 
 @Bot.on_message(filters.command(["start"]))
 async def start(bot, update):
+    fsub = FSUB
+    user_id = message.from_user.id
+    if 
     text = START_TXT.format(update.from_user.mention)
     reply_markup = START_BTN
     await update.reply_text(
