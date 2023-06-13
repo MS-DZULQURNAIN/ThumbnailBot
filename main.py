@@ -30,9 +30,12 @@ START_BTN = InlineKeyboardMarkup(
 
 @Bot.on_message(filters.command(["start"]))
 async def start(bot, update):
-    fsub = FSUB
+    kontol = FSUB
     user_id = message.from_user.id
-    if 
+    if kontol:
+        try:
+            await bot.get_chat_member(kontol, user_id)
+            except UserNotParticipant:
     text = START_TXT.format(update.from_user.mention)
     reply_markup = START_BTN
     await update.reply_text(
