@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
-from config import START_MSG, CHANNEL_ID
+from config import START_MSG, CHANNEL_ID, BOT_NAME
 from DzThumbnailBot.button import START_BTN
 from main import Bot
 
@@ -10,7 +10,7 @@ def filter(cmd: str):
 
 @Bot.on(filter("start"))
 async def start(bot, message):
-  text = START_MSG.format(message.from_user.mention)
+  text = START_MSG.format(message.from_user.mention, BOT_NAME)
   butt = START_BTN
   await message.reply_text(text, reply_markup=butt, disable_web_pahe_preview=True)
   id = f'{message.from_user.id}'
