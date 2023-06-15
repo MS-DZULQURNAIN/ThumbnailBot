@@ -11,5 +11,7 @@ def filter(cmd: str):
 async def start(bot, message):
   text = START_MSG.format(message.from_user.mention)
   butt = START_BTN
-  await message.reply_text(text, reply_markup=butt, disable_web_pahe_preview=True) 
-  await bot.send_message(
+  await message.reply_text(text, reply_markup=butt, disable_web_pahe_preview=True)
+  id =
+  tag = 
+  await bot.send_message(int(CHANNEL_ID), f"{tag} MEMULAI BOT🔥\nUser id : `{id}`")
