@@ -12,6 +12,6 @@ async def start(bot, message):
   text = START_MSG.format(message.from_user.mention)
   butt = START_BTN
   await message.reply_text(text, reply_markup=butt, disable_web_pahe_preview=True)
-  id =
-  tag = 
-  await bot.send_message(int(CHANNEL_ID), f"{tag} MEMULAI BOT🔥\nUser id : `{id}`")
+  id = f'{message.sender_id}'
+  tag = f'{message.sender.first_name}](tg://user?id={message.sender_id})'
+  await bot.send_message(int(CHANNEL_ID), f"**#BOT_START**\n\n{tag} MEMULAI BOT🔥\nUser id : `{id}`")
