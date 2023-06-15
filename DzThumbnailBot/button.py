@@ -10,9 +10,9 @@ START_BTN = inlineKeyboardMarkup([
             ],
             [
               InlineKeyboardButton(text="Channel", url=https://t.me/MSPR0JECT),
-              InlineKeyboardButton(text="", url=https://t.me/envSample),
+              InlineKeyboardButton(text="Support", url=https://t.me/envSample),
             ],
             [
-              InlineKeyboardButton(text="", callback_data=""),
+              InlineKeyboardButton(text="Tutup", callback_data="close"),
             ],
         ])
