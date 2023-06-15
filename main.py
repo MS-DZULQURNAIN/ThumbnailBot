@@ -4,10 +4,6 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyromod import listen
 
-BOT_TOKEN = "5883022355:AAEk6wtmdeUxyajh8fxBFfjcQdiLtfQ-f3M"
-API_ID = "16452568"
-API_HASH = "f936697c5c9e5bffd433babef7a4e4c9"
-
 Bot = Client(
     "Thumb-Bot",
     bot_token = BOT_TOKEN,
@@ -15,44 +11,6 @@ Bot = Client(
     api_hash = API_HASH
 )
 
-START_TXT = """
-Hi {}, I am video thumbnail changer Bot.
-
-Send a video/file to get started.
-"""
-
-START_BTN = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('Source Code', url='https://github.com/soebb/thumb-change-bot'),
-        ]]
-    )
-
-
-@Bot.on_message(filters.command("start") & filters.private)
-async def start(client: Client, message: Message):
-    kontol = FSUB
-    user_id = message.from_user.id
-    if kontol:
-        try:
-            await bot.get_chat_member(kontol, user_id)
-        except UserNotParticipant:
-            await message.reply_text("subscribe ch kami untuk mendapatkan akses bot",
-            reply_to_message_id = message.id,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Channel", url = client.invitelink)]])
-            )
-            return
-    try:
-        text = START_TXT.format(message.from_user.mention)
-        reply_markup = START_BTN
-        await message.reply_text(
-        text=text,
-        disable_web_page_preview=True,
-        reply_markup=reply_markup
-        )
-
-
-# global variable to store path of the recent sended thumbnail
-thumb = "https://telegra.ph/file/9f93ca1114a1e01b63239.jpg"
 
 @Bot.on_message(filters.private & (filters.video | filters.document))
 async def thumb_change(bot, m):
