@@ -1,7 +1,7 @@
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 
 from main import Bot
-from button import HOME, START_BTN
+from DzThumbnailBot.button import HOME, START_BTN
 from config import START_MSG, BOT_NAME
 
 @Bot.on_callback_query()
