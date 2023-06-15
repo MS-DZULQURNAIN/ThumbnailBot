@@ -1,6 +1,6 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-START_BTN = inlineKeyboardMarkup([
+START_BTN = InlineKeyboardMarkup([
             [
               InlineKeyboardButton(text="Developer👤", url=https://t.me/MSDZULQRNN),
             ],
@@ -16,3 +16,8 @@ START_BTN = inlineKeyboardMarkup([
               InlineKeyboardButton(text="Tutup", callback_data="close"),
             ],
         ])
+
+HOME = InlineKeyboardMarkup([
+            [
+              InlineKeyboardButton(text="Kembali", callback_data="st"),
+            ]])
