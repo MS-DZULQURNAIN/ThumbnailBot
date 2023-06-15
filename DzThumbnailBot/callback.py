@@ -19,7 +19,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         bst = START_BTN
         await query.message.edit_text(text=tst, disable_web_page_preview=True, reply_markup=bst)
     elif data == "donasi":
-        tdn = "Terimakasih yang sudah berdonasi agar bot tetap aktif [💌](htt"
+        tdn = "Terimakasih yang sudah berdonasi agar bot tetap aktif [💌](https://telegra.ph/file/bdf23d4e78c8337249c26.png)"
         bdn = HOME
         await query.message.edit_text(text=tdn, disable_web_page_preview=True, reply_markup=bdn)
     elif data == "close":
