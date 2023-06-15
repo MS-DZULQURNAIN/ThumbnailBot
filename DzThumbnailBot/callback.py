@@ -2,7 +2,7 @@ from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMa
 
 from main import Bot
 from button import HOME, START_BTN
-from config import START_MSG
+from config import START_MSG, BOT_NAME
 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
@@ -15,7 +15,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup=bhome
         )
     elif data == "st":
-        tst = START_MSG.format(message.from_user.mention)
+        tst = START_MSG.format(message.from_user.mention, BOT_NAME)
         bst = START_BTN
         await query.message.edit_text(text=tst, disable_web_page_preview=True, reply_markup=bst)
     elif data == "close":
