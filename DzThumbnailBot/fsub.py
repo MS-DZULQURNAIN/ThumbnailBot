@@ -1,7 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
-from config import FSUB, BOT_NAME
+from env import FSUB, BOT_NAME
+from main import Bot
 
 @Bot.on_message(filters.incoming & filters.private, group=-1)
 async def fsub(bot, message):
