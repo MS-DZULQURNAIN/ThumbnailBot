@@ -3,10 +3,10 @@ import time
 
 PROGRESS = """
 Percentage : {0}%
-Done: {1}
+Berhasil: {1}
 Total: {2}
-Speed: {3}/s
-ETA: {4}
+Kecepatan: {3}/s
+Perkiraan: {4}
 """
 
 async def progress_for_pyrogram(current, total, ud_type, message, start):
@@ -65,9 +65,9 @@ def TimeFormatter(milliseconds: int) -> str:
     minutes, seconds = divmod(seconds, 60)
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
-    tmp = ((str(days) + "d, ") if days else "") + \
-          ((str(hours) + "h, ") if hours else "") + \
-          ((str(minutes) + "m, ") if minutes else "") + \
-          ((str(seconds) + "s, ") if seconds else "") + \
+    tmp = ((str(hari) + "h, ") if days else "") + \
+          ((str(jam) + "j, ") if hours else "") + \
+          ((str(menit) + "m, ") if minutes else "") + \
+          ((str(detik) + "d, ") if seconds else "") + \
           ((str(milliseconds) + "ms, ") if milliseconds else "")
     return tmp[:-2]
