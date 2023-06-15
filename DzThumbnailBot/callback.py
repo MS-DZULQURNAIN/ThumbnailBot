@@ -18,6 +18,9 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         tst = START_MSG.format(message.from_user.mention, BOT_NAME)
         bst = START_BTN
         await query.message.edit_text(text=tst, disable_web_page_preview=True, reply_markup=bst)
+    elif data == "donasi":
+        tdn = "Terimakasih yang sudah berdonasi agar bot tetap aktif"
+        bdn = 
     elif data == "close":
         await query.message.delete()
         try:
