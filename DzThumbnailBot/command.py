@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
-from config import START_MSG, CHANNEL_ID, BOT_NAME
+from env import START_MSG, CHANNEL_ID, BOT_NAME
 from DzThumbnailBot.button import START_BTN
 from main import Bot
 
